@@ -1,0 +1,26 @@
+﻿
+★Elmah を SQLServer に接続するときは
+
+・web.configを編集する
+
+	<configuration>
+		...
+	
+		<elmah>
+			<security allowRemoteAccess="1" />
+			<!-- ↓追加する -->
+			<errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="connectionStringsに設定した名前" />
+		</elmah>
+
+		...
+	</configuration>
+
+・下記ファイルのスクリプトにてDBへElmah環境を作成する
+
+	Scripts
+		Tables
+			ELMAH_Error.sql
+		Stored Procedures
+			ELMAH_GetErrorsXml.sql
+			ELMAH_GetErrorXml.sql
+			ELMAH_LogError.sql

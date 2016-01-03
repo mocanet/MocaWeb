@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Moca.NETWebApp</id>
+    <title>Moca.NET WebApplication</title>
+    <version>2.1.0</version>
+    <authors>MiYABiS</authors>
+    <owners>MiYABiS</owners>
+    <description>
+      DI&amp;AOP framework Moca.NET Web Application
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      DI&amp;AOP framework Moca.NET Web Application
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/mocanet/MocaWeb</projectUrl>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright © 2011 MiYABiS All Rights Reserved.</copyright>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="WebActivator" version="1.5" />
+        <dependency id="Moca.NETCore" version="2.1.0" />
+      </group>
+      <group targetFramework=".NETFramework2.0">
+        <dependency id="Moca.NETCore" version="2.1.0" />
+      </group>
+    </dependencies>
+    <references></references>
+    <tags>AOP DI ASP.NET</tags>
+  </metadata>
+  <files>
+    <file src="..\MocaWeb20\bin\Release\MocaWeb.dll" target="lib\net20-full\MocaWeb.dll" />
+    <file src="..\MocaWeb20\bin\Release\MocaWeb.xml" target="lib\net20-full\MocaWeb.xml" />
+    <file src="..\MocaWeb35\bin\Release\MocaWeb.dll" target="lib\net35-full\MocaWeb.dll" />
+    <file src="..\MocaWeb35\bin\Release\MocaWeb.xml" target="lib\net35-full\MocaWeb.xml" />
+    <file src="..\MocaWeb40\bin\Release\MocaWeb.dll" target="lib\net40-full\MocaWeb.dll" />
+    <file src="..\MocaWeb40\bin\Release\MocaWeb.xml" target="lib\net40-full\MocaWeb.xml" />
+    <file src="..\MocaWeb45\bin\Release\MocaWeb.dll" target="lib\net45-full\MocaWeb.dll" />
+    <file src="..\MocaWeb45\bin\Release\MocaWeb.xml" target="lib\net45-full\MocaWeb.xml" />
+    <file src="..\MocaWeb46\bin\Release\MocaWeb.dll" target="lib\net46-full\MocaWeb.dll" />
+    <file src="..\MocaWeb46\bin\Release\MocaWeb.xml" target="lib\net46-full\MocaWeb.xml" />
+  </files>
+</package>

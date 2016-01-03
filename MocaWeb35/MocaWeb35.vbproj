@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{976D2A15-914A-4B93-9916-B2B7B64222F6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Moca</RootNamespace>
+    <AssemblyName>MocaWeb</AssemblyName>
+    <OptionStrict>Off</OptionStrict>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MocaWeb.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MocaWeb.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net35-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moca, Version=3.5.1.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moca.NETCore.2.1.0\lib\net35-full\Moca.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Services" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.Design" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MocaWeb20\Di\MocaComponent4Http.vb">
+      <Link>Di\MocaComponent4Http.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Di\MocaWebInjector.vb">
+      <Link>Di\MocaWebInjector.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Util\WebUtil.vb">
+      <Link>Util\WebUtil.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\ApplicationAttribute.vb">
+      <Link>Web\Attr\ApplicationAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\ApplicationNameAttribute.vb">
+      <Link>Web\Attr\ApplicationNameAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\CookieAttribute.vb">
+      <Link>Web\Attr\CookieAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\CookieNameAttribute.vb">
+      <Link>Web\Attr\CookieNameAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\QueryStringAttribute.vb">
+      <Link>Web\Attr\QueryStringAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\QueryStringNameAttribute.vb">
+      <Link>Web\Attr\QueryStringNameAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\ServerVariableNameAttribute.vb">
+      <Link>Web\Attr\ServerVariableNameAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\ServerVariablesAttribute.vb">
+      <Link>Web\Attr\ServerVariablesAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\SessionAttribute.vb">
+      <Link>Web\Attr\SessionAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Attr\SessionNameAttribute.vb">
+      <Link>Web\Attr\SessionNameAttribute.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\HttpContents.vb">
+      <Link>Web\HttpContents.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\HttpContentsApplication.vb">
+      <Link>Web\HttpContentsApplication.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\IHttpContents.vb">
+      <Link>Web\IHttpContents.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\AbstractHttpInterceptor.vb">
+      <Link>Web\Interceptor\AbstractHttpInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\ApplicationGetInterceptor.vb">
+      <Link>Web\Interceptor\ApplicationGetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\ApplicationSetInterceptor.vb">
+      <Link>Web\Interceptor\ApplicationSetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\CookieInterceptor.vb">
+      <Link>Web\Interceptor\CookieInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\QueryStringGetInterceptor.vb">
+      <Link>Web\Interceptor\QueryStringGetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\QueryStringSetInterceptor.vb">
+      <Link>Web\Interceptor\QueryStringSetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\ServerVariableGetInterceptor.vb">
+      <Link>Web\Interceptor\ServerVariableGetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\SessionGetInterceptor.vb">
+      <Link>Web\Interceptor\SessionGetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\Interceptor\SessionSetInterceptor.vb">
+      <Link>Web\Interceptor\SessionSetInterceptor.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\IServerVariables.vb">
+      <Link>Web\IServerVariables.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\MocaHttpHandler.vb">
+      <Link>Web\MocaHttpHandler.vb</Link>
+    </Compile>
+    <Compile Include="..\MocaWeb20\Web\MocaHTTPModule.vb">
+      <Link>Web\MocaHTTPModule.vb</Link>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\MocaWeb20\Key.snk">
+      <Link>Key.snk</Link>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="web.config" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\MocaWeb20\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51310</DevelopmentServerPort>
+          <DevelopmentServerVPath>/api</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューターにはない NuGet パッケージを参照しています。これらをダウンロードするには、NuGet パッケージの復元を有効にしてください。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。不足しているファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+</Project>
