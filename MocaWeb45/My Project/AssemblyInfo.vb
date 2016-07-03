@@ -17,7 +17,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(True)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("AAD0B0EA-406F-4AF4-99F3-2B34970E767E")> 
+<Assembly: Guid("AAD0B0EA-406F-4AF4-99F3-2B34970E767E")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -30,8 +30,8 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.5.0")> 
-<Assembly: AssemblyFileVersion("4.5.0")> 
+<Assembly: AssemblyVersion("4.5.1.0")>
+<Assembly: AssemblyFileVersion("4.5.1.0")>
 
 ' プログラム要素が CLS (Common Language Specification) に準拠しているかどうかを示します
 <Assembly: System.CLSCompliant(True)> 
