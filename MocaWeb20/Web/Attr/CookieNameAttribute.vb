@@ -7,35 +7,35 @@ Imports Moca.Web.Interceptor
 Namespace Web.Attr
 
 	''' <summary>
-	''' �N�b�L�[������
+	''' クッキー名属性
 	''' </summary>
 	''' <remarks>
-	''' �ʏ�̓v���p�e�B�������̂܂܃N�b�L�[�̃L�[�Ƃ��Ďg�p���܂����A
-	''' �v���p�e�B���Ƃ͕ʂɎw�肵�����Ƃ��́A���̑����Ŏw�肵�܂��B
+	''' 通常はプロパティ名をそのままクッキーのキーとして使用しますが、
+	''' プロパティ名とは別に指定したいときは、この属性で指定します。
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Property)> _
 	Public Class CookieNameAttribute
 		Inherits Attribute
 
-		''' <summary>�N�b�L�[��</summary>
+		''' <summary>クッキー名</summary>
 		Private _name As String
 
-#Region " �R���X�g���N�^ "
+#Region " コンストラクタ "
 
 		''' <summary>
-		''' �R���X�g���N�^
+		''' コンストラクタ
 		''' </summary>
-		''' <param name="name">�N�b�L�[��</param>
+		''' <param name="name">クッキー名</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal name As String)
 			_name = name
 		End Sub
 
 #End Region
-#Region " �v���p�e�B "
+#Region " プロパティ "
 
 		''' <summary>
-		''' �N�b�L�[���v���p�e�B
+		''' クッキー名プロパティ
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>

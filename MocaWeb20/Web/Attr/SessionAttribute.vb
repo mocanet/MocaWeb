@@ -8,20 +8,20 @@ Imports Moca.Web.Interceptor
 Namespace Web.Attr
 
 	''' <summary>
-	''' ƒZƒbƒVƒ‡ƒ“‘®«
+	''' ã‚»ãƒƒã‚·ãƒ§ãƒ³å±æ€§
 	''' </summary>
 	''' <remarks>
-	''' ƒZƒbƒVƒ‡ƒ“‚Æ‚µ‚Äˆµ‚¢‚½‚¢ƒCƒ“ƒ^ƒtƒF[ƒX‚É‘Î‚µ‚Äw’è‚µ‚Ü‚·B
+	''' ã‚»ãƒƒã‚·ãƒ§ãƒ³ã¨ã—ã¦æ‰±ã„ãŸã„ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã«å¯¾ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Interface)> _
 	Public Class SessionAttribute
 		Inherits Attribute
 
 		''' <summary>
-		''' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
+		''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
 		''' </summary>
-		''' <param name="target">‘ÎÛ‚Æ‚È‚éƒIƒuƒWƒFƒNƒg</param>
-		''' <param name="field">‘ÎÛ‚Æ‚È‚éƒtƒB[ƒ‹ƒh</param>
+		''' <param name="target">å¯¾è±¡ã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		''' <param name="field">å¯¾è±¡ã¨ãªã‚‹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
         Public Function CreateComponent(Of T)(ByVal target As Object, ByVal field As FieldInfo) As MocaComponent
@@ -30,7 +30,7 @@ Namespace Web.Attr
 
             aspects = New ArrayList()
 
-            ' ƒtƒB[ƒ‹ƒh‚ÌƒCƒ“ƒ^ƒtƒF[ƒX‚ğ‰ğÍ
+            ' ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’è§£æ
             props = ClassUtil.GetProperties(field.FieldType)
             For Each prop As PropertyInfo In props
                 Dim name As String
@@ -42,7 +42,7 @@ Namespace Web.Attr
                     name = attr.Name
                 End If
 
-                ' Getter/Setter ƒƒ\ƒbƒh‚ÌƒAƒXƒyƒNƒgì¬
+                ' Getter/Setter ãƒ¡ã‚½ãƒƒãƒ‰ã®ã‚¢ã‚¹ãƒšã‚¯ãƒˆä½œæˆ
                 Dim pointcut As IPointcut
                 pointcut = New Pointcut(New String() {prop.GetGetMethod().ToString})
                 aspects.Add(New Aspect(New SessionGetInterceptor(name), pointcut))
@@ -50,7 +50,7 @@ Namespace Web.Attr
                 aspects.Add(New Aspect(New SessionSetInterceptor(name), pointcut))
             Next
 
-            ' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
+            ' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
             Dim component As MocaComponent
 
             component = CType(Moca.Util.ClassUtil.NewInstance(GetType(T), New Object() {field.FieldType, field.FieldType}), MocaComponent)

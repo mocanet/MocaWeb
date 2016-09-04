@@ -2,35 +2,35 @@
 Namespace Web.Attr
 
 	''' <summary>
-	''' Web �T�[�o�[�ϐ�������
+	''' Web サーバー変数名属性
 	''' </summary>
 	''' <remarks>
-	''' �ʏ�̓v���p�e�B�������̂܂�Web �T�[�o�[�ϐ��̃L�[�Ƃ��Ďg�p���܂����A
-	''' �v���p�e�B���Ƃ͕ʂɎw�肵�����Ƃ��́A���̑����Ŏw�肵�܂��B
+	''' 通常はプロパティ名をそのままWeb サーバー変数のキーとして使用しますが、
+	''' プロパティ名とは別に指定したいときは、この属性で指定します。
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Property)> _
 	Public Class ServerVariableNameAttribute
 		Inherits Attribute
 
-		''' <summary>�Z�b�V������</summary>
+		''' <summary>セッション名</summary>
 		Private _name As String
 
-#Region " �R���X�g���N�^ "
+#Region " コンストラクタ "
 
 		''' <summary>
-		''' �R���X�g���N�^
+		''' コンストラクタ
 		''' </summary>
-		''' <param name="name">�Z�b�V������</param>
+		''' <param name="name">セッション名</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal name As String)
 			_name = name
 		End Sub
 
 #End Region
-#Region " �v���p�e�B "
+#Region " プロパティ "
 
 		''' <summary>
-		''' �Z�b�V�������v���p�e�B
+		''' セッション名プロパティ
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>

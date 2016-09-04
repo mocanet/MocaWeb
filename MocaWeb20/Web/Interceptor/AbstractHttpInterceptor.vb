@@ -4,7 +4,7 @@ Imports Moca.Exceptions
 Namespace Web.Interceptor
 
 	''' <summary>
-	''' HTTPŒnƒAƒvƒŠ‚ÅƒCƒ“ƒ^[ƒZƒvƒ^[‚ğg‚¤‚Æ‚«‚É•Ö—˜‚È’ŠÛƒNƒ‰ƒX
+	''' HTTPç³»ã‚¢ãƒ—ãƒªã§ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ã‚¿ãƒ¼ã‚’ä½¿ã†ã¨ãã«ä¾¿åˆ©ãªæŠ½è±¡ã‚¯ãƒ©ã‚¹
 	''' </summary>
 	''' <remarks></remarks>
 	Public MustInherit Class AbstractHttpInterceptor
@@ -13,13 +13,13 @@ Namespace Web.Interceptor
 		Private ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
 
 		''' <summary>
-		''' ƒRƒ“ƒeƒ“ƒcƒ`ƒFƒbƒN
+		''' ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ãƒã‚§ãƒƒã‚¯
 		''' </summary>
-		''' <param name="target">ƒ`ƒFƒbƒN‘ÎÛ</param>
+		''' <param name="target">ãƒã‚§ãƒƒã‚¯å¯¾è±¡</param>
 		''' <remarks></remarks>
 		Protected Sub checkHttpContents(ByVal target As Object)
 			If TryCast(target, IHttpContents) Is Nothing Then
-				Throw New MocaRuntimeException("Http ’ÊM‚Åˆµ‚¤ƒIƒuƒWƒFƒNƒg‚ª IHttpContents ‚ğÀ‘•‚µ‚Ä‚¢‚Ü‚¹‚ñB")
+				Throw New MocaRuntimeException("Http é€šä¿¡ã§æ‰±ã†ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒ IHttpContents ã‚’å®Ÿè£…ã—ã¦ã„ã¾ã›ã‚“ã€‚")
 			End If
 		End Sub
 

@@ -4,7 +4,7 @@ Imports Moca.Web.Attr
 Namespace Web
 
 	''' <summary>
-	''' Web ƒT[ƒo[•Ï”ƒRƒŒƒNƒVƒ‡ƒ“ƒGƒ“ƒeƒBƒeƒB
+	''' Web ã‚µãƒ¼ãƒãƒ¼å¤‰æ•°ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£
 	''' </summary>
 	''' <remarks></remarks>
 	<ServerVariables()> _

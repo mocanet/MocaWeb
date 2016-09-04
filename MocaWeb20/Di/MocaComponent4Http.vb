@@ -6,29 +6,29 @@ Imports Moca.Web
 Namespace Di
 
 	''' <summary>
-	''' �R���e�i�Ɋi�[����Http�������R���|�[�l���g
+	''' コンテナに格納するHttpを扱うコンポーネント
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class MocaComponent4Http
 		Inherits MocaComponent
 
-#Region " �R���X�g���N�^ "
+#Region " コンストラクタ "
 
 		''' <summary>
-		''' �R���X�g���N�^
+		''' コンストラクタ
 		''' </summary>
-		''' <param name="implType">���Ԃ̌^</param>
-		''' <param name="fieldType">�t�B�[���h�̌^</param>
+		''' <param name="implType">実態の型</param>
+		''' <param name="fieldType">フィールドの型</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal implType As Type, ByVal fieldType As Type)
 			MyBase.New(implType, fieldType)
 		End Sub
 
 		''' <summary>
-		''' �R���X�g���N�^
+		''' コンストラクタ
 		''' </summary>
-		''' <param name="key">�R���|�[�l���g�̃L�[</param>
-		''' <param name="fieldType">�t�B�[���h�̌^</param>
+		''' <param name="key">コンポーネントのキー</param>
+		''' <param name="fieldType">フィールドの型</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal key As String, ByVal fieldType As Type)
 			MyBase.New(key, fieldType)
@@ -37,9 +37,9 @@ Namespace Di
 #End Region
 
 		''' <summary>
-		''' �I�u�W�F�N�g���C���X�^���X�����ĕԂ��܂��B
+		''' オブジェクトをインスタンス化して返します。
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�y�[�W</param>
+		''' <param name="target">対象となるページ</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
         Public Shadows Function Create(ByVal target As Object, ByVal httpContentsType As Type) As Object
@@ -50,9 +50,9 @@ Namespace Di
         End Function
 
 		''' <summary>
-		''' �I�u�W�F�N�g���C���X�^���X�����ĕԂ��܂��B
+		''' オブジェクトをインスタンス化して返します。
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�y�[�W</param>
+		''' <param name="target">対象となるページ</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
         Protected Shadows Function createObject(ByVal target As Object) As Object
@@ -62,15 +62,15 @@ Namespace Di
         End Function
 
 		''' <summary>
-		''' �I�u�W�F�N�g���v���L�V�Ƃ��ăC���X�^���X�����ĕԂ��܂��B
+		''' オブジェクトをプロキシとしてインスタンス化して返します。
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�y�[�W</param>
+		''' <param name="target">対象となるページ</param>
 		''' <returns></returns>
 		''' <remarks>
-		''' HttpContents ���C���X�^���X������ FieldType �̌^�ɍ��킹�ăv���L�V���쐬���Ă܂��B
-		''' Web�ł̓}���`�X���b�h�ɂȂ�̂ŁAInterceptor �őΏۂƂȂ� Page ����肷��ׂɂ́A
-		''' �Ώۂ̃Z�b�V������� Page �C���X�^���X���K�v�ƂȂ�B
-		''' ���ׁ̈AASP��ł� Page ���擾�o����悤�ɕK���AHttpContents �����̉����邱�Ƃɂ����B
+		''' HttpContents をインスタンス化して FieldType の型に合わせてプロキシを作成してます。
+		''' Webではマルチスレッドになるので、Interceptor で対象となる Page を特定する為には、
+		''' 対象のセッション上の Page インスタンスが必要となる。
+		''' その為、ASP上では Page を取得出来るように必ず、HttpContents を実体化することにした。
 		''' </remarks>
         Protected Shadows Function createProxyObject(ByVal target As Object, ByVal httpContentsType As Type) As Object
             Dim val As Object = Nothing

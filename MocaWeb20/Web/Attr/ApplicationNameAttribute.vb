@@ -2,25 +2,25 @@
 Namespace Web.Attr
 
 	''' <summary>
-	''' ƒAƒvƒŠƒP[ƒVƒ‡ƒ“–¼‘®«
+	''' ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³åå±žæ€§
 	''' </summary>
 	''' <remarks>
-	''' ’Êí‚ÍƒvƒƒpƒeƒB–¼‚ð‚»‚Ì‚Ü‚ÜƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒL[‚Æ‚µ‚ÄŽg—p‚µ‚Ü‚·‚ªA
-	''' ƒvƒƒpƒeƒB–¼‚Æ‚Í•Ê‚ÉŽw’è‚µ‚½‚¢‚Æ‚«‚ÍA‚±‚Ì‘®«‚ÅŽw’è‚µ‚Ü‚·B
+	''' é€šå¸¸ã¯ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£åã‚’ãã®ã¾ã¾ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ã‚­ãƒ¼ã¨ã—ã¦ä½¿ç”¨ã—ã¾ã™ãŒã€
+	''' ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£åã¨ã¯åˆ¥ã«æŒ‡å®šã—ãŸã„ã¨ãã¯ã€ã“ã®å±žæ€§ã§æŒ‡å®šã—ã¾ã™ã€‚
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Property)> _
 	Public Class ApplicationNameAttribute
 		Inherits Attribute
 
-		''' <summary>ƒZƒbƒVƒ‡ƒ“–¼</summary>
+		''' <summary>ã‚»ãƒƒã‚·ãƒ§ãƒ³å</summary>
 		Private _name As String
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="name">ƒZƒbƒVƒ‡ƒ“–¼</param>
+		''' <param name="name">ã‚»ãƒƒã‚·ãƒ§ãƒ³å</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal name As String)
 			_name = name
@@ -28,10 +28,10 @@ Namespace Web.Attr
 
 #End Region
 
-#Region " ƒvƒƒpƒeƒB "
+#Region " ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ "
 
 		''' <summary>
-		''' ƒZƒbƒVƒ‡ƒ“–¼ƒvƒƒpƒeƒB
+		''' ã‚»ãƒƒã‚·ãƒ§ãƒ³åãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>

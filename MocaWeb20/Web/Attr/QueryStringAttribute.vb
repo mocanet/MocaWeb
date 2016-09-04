@@ -8,20 +8,20 @@ Imports Moca.Web.Interceptor
 Namespace Web.Attr
 
 	''' <summary>
-	''' ƒNƒGƒŠ[•¶š—ñ‘®«
+	''' ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å±æ€§
 	''' </summary>
 	''' <remarks>
-	''' ƒNƒGƒŠ[•¶š—ñ‚Æ‚µ‚Äˆµ‚¢‚½‚¢ƒCƒ“ƒ^ƒtƒF[ƒX‚É‘Î‚µ‚Äw’è‚µ‚Ü‚·B
+	''' ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—ã¨ã—ã¦æ‰±ã„ãŸã„ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã«å¯¾ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Interface)> _
 	Public Class QueryStringAttribute
 		Inherits Attribute
 
 		''' <summary>
-		''' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
+		''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
 		''' </summary>
-		''' <param name="target">‘ÎÛ‚Æ‚È‚éƒIƒuƒWƒFƒNƒg</param>
-		''' <param name="field">‘ÎÛ‚Æ‚È‚éƒtƒB[ƒ‹ƒh</param>
+		''' <param name="target">å¯¾è±¡ã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		''' <param name="field">å¯¾è±¡ã¨ãªã‚‹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
 		Public Function CreateComponent(ByVal target As Object, ByVal field As FieldInfo) As MocaComponent
@@ -30,7 +30,7 @@ Namespace Web.Attr
 
 			aspects = New ArrayList()
 
-			' ƒtƒB[ƒ‹ƒh‚ÌƒCƒ“ƒ^ƒtƒF[ƒX‚ğ‰ğÍ
+			' ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’è§£æ
 			props = ClassUtil.GetProperties(field.FieldType)
 			For Each prop As PropertyInfo In props
 				Dim name As String
@@ -42,7 +42,7 @@ Namespace Web.Attr
 					name = attr.Name
 				End If
 
-				' Getter/Setter ƒƒ\ƒbƒh‚ÌƒAƒXƒyƒNƒgì¬
+				' Getter/Setter ãƒ¡ã‚½ãƒƒãƒ‰ã®ã‚¢ã‚¹ãƒšã‚¯ãƒˆä½œæˆ
 				Dim pointcut As IPointcut
 				pointcut = New Pointcut(New String() {prop.GetGetMethod().ToString})
 				aspects.Add(New Aspect(New QueryStringGetInterceptor(name), pointcut))
@@ -50,7 +50,7 @@ Namespace Web.Attr
 				aspects.Add(New Aspect(New QueryStringSetInterceptor(name), pointcut))
 			Next
 
-			' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
+			' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
 			Dim component As MocaComponent4Http
 			component = New MocaComponent4Http(field.FieldType, field.FieldType)
 			component.Aspects = DirectCast(aspects.ToArray(GetType(IAspect)), IAspect())

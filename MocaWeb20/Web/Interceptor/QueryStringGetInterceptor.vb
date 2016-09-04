@@ -4,25 +4,25 @@ Imports Moca.Aop
 Namespace Web.Interceptor
 
 	''' <summary>
-	''' ƒNƒGƒŠ[•¶š—ñ•Ï”‚ğˆµ‚¤‚Æ‚«‚Ég—p‚·‚é Getter ƒƒ\ƒbƒhƒCƒ“ƒ^[ƒZƒvƒ^[
+	''' ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å¤‰æ•°ã‚’æ‰±ã†ã¨ãã«ä½¿ç”¨ã™ã‚‹ Getter ãƒ¡ã‚½ãƒƒãƒ‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ã‚¿ãƒ¼
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class QueryStringGetInterceptor
 		Inherits AbstractHttpInterceptor
 		Implements IMethodInterceptor
 
-		''' <summary>ƒNƒGƒŠ[•¶š—ñ–¼</summary>
+		''' <summary>ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å</summary>
 		Private _name As String
 
 		''' <summary>log4net logger</summary>
 		Private ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="name">ƒNƒGƒŠ[•¶š—ñ–¼</param>
+		''' <param name="name">ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal name As String)
 			_name = name
@@ -31,12 +31,12 @@ Namespace Web.Interceptor
 #End Region
 
 		''' <summary>
-		''' ƒƒ\ƒbƒhÀs
+		''' ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="invocation">Interceptor‚©‚çƒCƒ“ƒ^[ƒZƒvƒg‚³‚ê‚Ä‚¢‚éƒƒ\ƒbƒh‚Ìî•ñ</param>
-		''' <returns>ŠY“–‚·‚éƒAƒvƒŠƒP[ƒVƒ‡ƒ“ƒIƒuƒWƒFƒNƒg</returns>
+		''' <param name="invocation">Interceptorã‹ã‚‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ãƒˆã•ã‚Œã¦ã„ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã®æƒ…å ±</param>
+		''' <returns>è©²å½“ã™ã‚‹ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</returns>
 		''' <remarks>
-		''' ƒAƒvƒŠƒP[ƒVƒ‡ƒ“–¼‚ğŒ³‚ÉƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚©‚çƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·B
+		''' ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³åã‚’å…ƒã«ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‹ã‚‰ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™ã€‚
 		''' </remarks>
 		Public Function Invoke(ByVal invocation As Aop.IMethodInvocation) As Object Implements Aop.IMethodInterceptor.Invoke
 			Dim contents As IHttpContents

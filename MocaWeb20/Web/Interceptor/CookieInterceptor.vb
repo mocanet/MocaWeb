@@ -5,28 +5,28 @@ Imports Moca.Exceptions
 Namespace Web.Interceptor
 
 	''' <summary>
-	''' ƒNƒbƒL[‚ğˆµ‚¤‚Æ‚«‚Ég—p‚·‚é Getter ƒƒ\ƒbƒhƒCƒ“ƒ^[ƒZƒvƒ^[
+	''' ã‚¯ãƒƒã‚­ãƒ¼ã‚’æ‰±ã†ã¨ãã«ä½¿ç”¨ã™ã‚‹ Getter ãƒ¡ã‚½ãƒƒãƒ‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ã‚¿ãƒ¼
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class CookieInterceptor
 		Inherits AbstractHttpInterceptor
 		Implements IMethodInterceptor
 
-		''' <summary>ƒNƒbƒL[í•Ê</summary>
+		''' <summary>ã‚¯ãƒƒã‚­ãƒ¼ç¨®åˆ¥</summary>
 		Private _type As Attr.CookieType
-		''' <summary>ƒNƒbƒL[–¼</summary>
+		''' <summary>ã‚¯ãƒƒã‚­ãƒ¼å</summary>
 		Private _name As String
 
 		''' <summary>log4net logger</summary>
 		Private ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="typ">ˆµ‚¤ƒNƒbƒL[‚Ìí•Ê</param>
-		''' <param name="name">ƒNƒbƒL[–¼</param>
+		''' <param name="typ">æ‰±ã†ã‚¯ãƒƒã‚­ãƒ¼ã®ç¨®åˆ¥</param>
+		''' <param name="name">ã‚¯ãƒƒã‚­ãƒ¼å</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal typ As Attr.CookieType, ByVal name As String)
 			_type = typ
@@ -36,12 +36,12 @@ Namespace Web.Interceptor
 #End Region
 
 		''' <summary>
-		''' ƒƒ\ƒbƒhÀs
+		''' ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="invocation">Interceptor‚©‚çƒCƒ“ƒ^[ƒZƒvƒg‚³‚ê‚Ä‚¢‚éƒƒ\ƒbƒh‚Ìî•ñ</param>
-		''' <returns>ŠY“–‚·‚é HttpCookie</returns>
+		''' <param name="invocation">Interceptorã‹ã‚‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ãƒˆã•ã‚Œã¦ã„ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã®æƒ…å ±</param>
+		''' <returns>è©²å½“ã™ã‚‹ HttpCookie</returns>
 		''' <remarks>
-		''' w’è‚³‚ê‚Ä‚¢‚éƒNƒbƒL[í•Ê‚©‚çƒNƒbƒL[–¼‚ğŒ³‚É HttpCookie ‚ğ•Ô‚·B
+		''' æŒ‡å®šã•ã‚Œã¦ã„ã‚‹ã‚¯ãƒƒã‚­ãƒ¼ç¨®åˆ¥ã‹ã‚‰ã‚¯ãƒƒã‚­ãƒ¼åã‚’å…ƒã« HttpCookie ã‚’è¿”ã™ã€‚
 		''' </remarks>
 		Public Function Invoke(ByVal invocation As Aop.IMethodInvocation) As Object Implements Aop.IMethodInterceptor.Invoke
 			Dim contents As IHttpContents

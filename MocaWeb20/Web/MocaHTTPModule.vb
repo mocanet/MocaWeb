@@ -12,10 +12,10 @@ Imports Moca.Db.Attr
 Namespace Web
 
 	''' <summary>
-	''' ƒ‚ƒWƒ…[ƒ‹‚Ì‰Šú‰»ƒCƒxƒ“ƒg‚¨‚æ‚Ñ”jŠüƒCƒxƒ“ƒg‚Ì‹¤’Êˆ—
+	''' ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®åˆæœŸåŒ–ã‚¤ãƒ™ãƒ³ãƒˆãŠã‚ˆã³ç ´æ£„ã‚¤ãƒ™ãƒ³ãƒˆã®å…±é€šå‡¦ç†
 	''' </summary>
 	''' <remarks>
-	''' web.config ƒtƒ@ƒCƒ‹‚Ö‰º‹L‚ð’Ç‹L‚µ‚Ä‚­‚¾‚³‚¢B<br/>
+	''' web.config ãƒ•ã‚¡ã‚¤ãƒ«ã¸ä¸‹è¨˜ã‚’è¿½è¨˜ã—ã¦ãã ã•ã„ã€‚<br/>
 	''' <example>
 	''' <code lang="xml">
 	''' <system.web>
@@ -29,16 +29,16 @@ Namespace Web
 	Public Class MocaHTTPModule
 		Implements IHttpModule
 
-		''' <summary>ƒy[ƒW‚É‘Î‚µ‚Ä‚ÌˆË‘¶«’“ü</summary>
+		''' <summary>ãƒšãƒ¼ã‚¸ã«å¯¾ã—ã¦ã®ä¾å­˜æ€§æ³¨å…¥</summary>
 		Private _injector As MocaWebInjector
 
 		''' <summary>Logging For Log4net</summary>
 		Private ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^^ƒfƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼ãƒ‡ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <remarks></remarks>
 		Public Sub New()
@@ -52,20 +52,20 @@ Namespace Web
 #Region " IHttpModule "
 
 		''' <summary>
-		''' ƒ‚ƒWƒ…[ƒ‹‚ð‰Šú‰»‚µA—v‹‚ðˆ—‚Å‚«‚é‚æ‚¤‚É€”õ‚µ‚Ü‚·B
+		''' ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’åˆæœŸåŒ–ã—ã€è¦æ±‚ã‚’å‡¦ç†ã§ãã‚‹ã‚ˆã†ã«æº–å‚™ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="context"></param>
 		''' <remarks></remarks>
 		Public Sub Init(ByVal context As System.Web.HttpApplication) Implements System.Web.IHttpModule.Init
-			' log4net €”õ
+			' log4net æº–å‚™
 			Dim rootPath As String = context.Context.Server.MapPath("~")
 			Dim log4netConfig As String = System.IO.Path.Combine(rootPath, "log4net.config")
 			log4net.Config.XmlConfigurator.Configure(New System.IO.FileInfo(log4netConfig))
 
-			' ƒRƒ“ƒeƒi €”õ
+			' ã‚³ãƒ³ãƒ†ãƒŠ æº–å‚™
 			_injector = New MocaWebInjector()
 
-			' ƒnƒ“ƒhƒ‰[ €”õ
+			' ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ æº–å‚™
 			AddHandler context.BeginRequest, AddressOf Me._BeginRequest
 			AddHandler context.AuthenticateRequest, AddressOf Me._AuthenticateRequest
 			AddHandler context.PostAuthenticateRequest, AddressOf Me._PostAuthenticateRequest
@@ -77,7 +77,7 @@ Namespace Web
 			AddHandler context.AcquireRequestState, AddressOf Me._AcquireRequestState
 			AddHandler context.PostAcquireRequestState, AddressOf Me._PostAcquireRequestState
 			AddHandler context.PreRequestHandlerExecute, AddressOf Me._PreRequestHandlerExecute
-			' ƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚ªŽÀs‚³‚ê‚Ü‚·B
+			' ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ãŒå®Ÿè¡Œã•ã‚Œã¾ã™ã€‚
 			AddHandler context.PostRequestHandlerExecute, AddressOf Me._PostRequestHandlerExecute
 			AddHandler context.ReleaseRequestState, AddressOf Me._ReleaseRequestState
 			AddHandler context.PostReleaseRequestState, AddressOf Me._PostReleaseRequestState
@@ -93,7 +93,7 @@ Namespace Web
 #Region " Handler "
 
 		''' <summary>
-		''' ASP.NET ‚ª—v‹‚É‰ž“š‚·‚é‚Æ‚«‚ÉAŽÀs‚Ì HTTP ƒpƒCƒvƒ‰ƒCƒ“ ƒ`ƒFƒCƒ“‚ÌÅ‰‚ÌƒCƒxƒ“ƒg‚Æ‚µ‚Ä”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒè¦æ±‚ã«å¿œç­”ã™ã‚‹ã¨ãã«ã€å®Ÿè¡Œã® HTTP ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ ãƒã‚§ã‚¤ãƒ³ã®æœ€åˆã®ã‚¤ãƒ™ãƒ³ãƒˆã¨ã—ã¦ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -103,7 +103,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ƒZƒLƒ…ƒŠƒeƒB ƒ‚ƒWƒ…[ƒ‹‚ªƒ†[ƒU[‚Ì ID ‚ðŠm—§‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒãƒ¦ãƒ¼ã‚¶ãƒ¼ã® ID ã‚’ç¢ºç«‹ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -113,7 +113,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ƒZƒLƒ…ƒŠƒeƒB ƒ‚ƒWƒ…[ƒ‹‚ªƒ†[ƒU[‚Ì ID ‚ðŠm—§‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒãƒ¦ãƒ¼ã‚¶ãƒ¼ã® ID ã‚’ç¢ºç«‹ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -123,7 +123,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ƒZƒLƒ…ƒŠƒeƒB ƒ‚ƒWƒ…[ƒ‹‚É‚æ‚Á‚Äƒ†[ƒU[‚ª³”F‚³‚ê‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã«ã‚ˆã£ã¦ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒæ‰¿èªã•ã‚Œã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -133,7 +133,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' Œ»Ý‚Ì—v‹‚Ìƒ†[ƒU[‚ª³”F‚³‚ê‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ç¾åœ¨ã®è¦æ±‚ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒæ‰¿èªã•ã‚Œã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -143,9 +143,9 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰ (ƒy[ƒW‚Ü‚½‚Í Web ƒT[ƒrƒX‚È‚Ç) ‚ÌŽÀs‚ðÈ—ª‚µ‚Ä
-		''' ƒLƒƒƒbƒVƒ“ƒO ƒ‚ƒWƒ…[ƒ‹‚ÅƒLƒƒƒbƒVƒ…‚©‚ç‚Ì—v‹‚ðˆ—‚Å‚«‚é‚æ‚¤‚É‚·‚é‚½‚ß‚ÉA
-		''' ASP.NET ‚ª³”FƒCƒxƒ“ƒg‚ðŠ®—¹‚µ‚½‚Æ‚«‚É”­¶‚µ‚Ü‚·
+		''' ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ© (ãƒšãƒ¼ã‚¸ã¾ãŸã¯ Web ã‚µãƒ¼ãƒ“ã‚¹ãªã©) ã®å®Ÿè¡Œã‚’çœç•¥ã—ã¦
+		''' ã‚­ãƒ£ãƒƒã‚·ãƒ³ã‚° ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã§ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‹ã‚‰ã®è¦æ±‚ã‚’å‡¦ç†ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã«ã€
+		''' ASP.NET ãŒæ‰¿èªã‚¤ãƒ™ãƒ³ãƒˆã‚’å®Œäº†ã—ãŸã¨ãã«ç™ºç”Ÿã—ã¾ã™
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -155,8 +155,8 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ªŒ»Ý‚ÌƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚ÌŽÀs‚ðÈ—ª‚µA
-		''' ƒLƒƒƒbƒVƒ“ƒO ƒ‚ƒWƒ…[ƒ‹‚É‘Î‚µ‚ÄƒLƒƒƒbƒVƒ…‚©‚ç‚Ì—v‹‚Ìˆ—‚ð‹–‰Â‚µ‚½ê‡‚É”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒç¾åœ¨ã®ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ã®å®Ÿè¡Œã‚’çœç•¥ã—ã€
+		''' ã‚­ãƒ£ãƒƒã‚·ãƒ³ã‚° ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã«å¯¾ã—ã¦ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‹ã‚‰ã®è¦æ±‚ã®å‡¦ç†ã‚’è¨±å¯ã—ãŸå ´åˆã«ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -166,7 +166,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ªŒ»Ý‚Ì—v‹‚ð“KØ‚ÈƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚Éƒ}ƒbƒv‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒç¾åœ¨ã®è¦æ±‚ã‚’é©åˆ‡ãªã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ã«ãƒžãƒƒãƒ—ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -176,7 +176,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' Œ»Ý‚Ì—v‹‚ÉŠÖ˜A•t‚¯‚ç‚ê‚½Œ»Ý‚Ìó‘Ô (ƒZƒbƒVƒ‡ƒ“ó‘Ô‚È‚Ç) ‚ð ASP.NET ‚ªŽæ“¾‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ç¾åœ¨ã®è¦æ±‚ã«é–¢é€£ä»˜ã‘ã‚‰ã‚ŒãŸç¾åœ¨ã®çŠ¶æ…‹ (ã‚»ãƒƒã‚·ãƒ§ãƒ³çŠ¶æ…‹ãªã©) ã‚’ ASP.NET ãŒå–å¾—ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -186,7 +186,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' Œ»Ý‚Ì—v‹‚ÉŠÖ˜A•t‚¯‚ç‚ê‚½—v‹ó‘Ô (ƒZƒbƒVƒ‡ƒ“ó‘Ô‚È‚Ç) ‚ªŽæ“¾‚³‚ê‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ç¾åœ¨ã®è¦æ±‚ã«é–¢é€£ä»˜ã‘ã‚‰ã‚ŒãŸè¦æ±‚çŠ¶æ…‹ (ã‚»ãƒƒã‚·ãƒ§ãƒ³çŠ¶æ…‹ãªã©) ãŒå–å¾—ã•ã‚Œã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -196,7 +196,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ªƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰ (ƒy[ƒWAXML Web ƒT[ƒrƒX‚È‚Ç) ‚ÌŽÀs‚ðŠJŽn‚·‚é’¼‘O‚É”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ© (ãƒšãƒ¼ã‚¸ã€XML Web ã‚µãƒ¼ãƒ“ã‚¹ãªã©) ã®å®Ÿè¡Œã‚’é–‹å§‹ã™ã‚‹ç›´å‰ã«ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -206,7 +206,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰ (ƒy[ƒWAXML Web ƒT[ƒrƒX‚È‚Ç) ‚ÌŽÀs‚ªŠ®—¹‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ASP.NET ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ© (ãƒšãƒ¼ã‚¸ã€XML Web ã‚µãƒ¼ãƒ“ã‚¹ãªã©) ã®å®Ÿè¡ŒãŒå®Œäº†ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -216,8 +216,8 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ª‚·‚×‚Ä‚Ì—v‹ƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚ÌŽÀs‚ðI—¹‚·‚é‚Æ”­¶‚µ‚Ü‚·B
-		''' ‚±‚ÌƒCƒxƒ“ƒg‚ª”­¶‚·‚é‚ÆAó‘Ôƒ‚ƒWƒ…[ƒ‹‚ªŒ»Ý‚Ìó‘Ôƒf[ƒ^‚ð•Û‘¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒã™ã¹ã¦ã®è¦æ±‚ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ã®å®Ÿè¡Œã‚’çµ‚äº†ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
+		''' ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒç™ºç”Ÿã™ã‚‹ã¨ã€çŠ¶æ…‹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒç¾åœ¨ã®çŠ¶æ…‹ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -227,7 +227,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ª‚·‚×‚Ä‚Ì—v‹ƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚ÌŽÀs‚ðŠ®—¹‚µA—v‹ó‘Ôƒf[ƒ^‚ªŠi”[‚³‚ê‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒã™ã¹ã¦ã®è¦æ±‚ã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ã®å®Ÿè¡Œã‚’å®Œäº†ã—ã€è¦æ±‚çŠ¶æ…‹ãƒ‡ãƒ¼ã‚¿ãŒæ ¼ç´ã•ã‚Œã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -237,9 +237,9 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ƒLƒƒƒbƒVƒ…‚©‚ç‚ÌŒã‘±‚Ì—v‹‚ðˆ—‚·‚é‚½‚ß‚ÉŽg—p‚·‚é‰ž“š‚ð
-		''' ƒLƒƒƒbƒVƒ“ƒO ƒ‚ƒWƒ…[ƒ‹‚ÅŠi”[‚Å‚«‚é‚æ‚¤‚É‚·‚é‚½‚ß‚ÉA
-		''' ASP.NET ‚ªƒCƒxƒ“ƒg ƒnƒ“ƒhƒ‰‚ÌŽÀs‚ðŠ®—¹‚µ‚½‚Æ‚«‚É”­¶‚µ‚Ü‚·B
+		''' ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‹ã‚‰ã®å¾Œç¶šã®è¦æ±‚ã‚’å‡¦ç†ã™ã‚‹ãŸã‚ã«ä½¿ç”¨ã™ã‚‹å¿œç­”ã‚’
+		''' ã‚­ãƒ£ãƒƒã‚·ãƒ³ã‚° ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã§æ ¼ç´ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã«ã€
+		''' ASP.NET ãŒã‚¤ãƒ™ãƒ³ãƒˆ ãƒãƒ³ãƒ‰ãƒ©ã®å®Ÿè¡Œã‚’å®Œäº†ã—ãŸã¨ãã«ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -249,7 +249,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ªAƒLƒƒƒbƒVƒ“ƒO ƒ‚ƒWƒ…[ƒ‹‚ÌXVA‚¨‚æ‚ÑƒLƒƒƒbƒVƒ…‚©‚ç‚ÌŒã‘±‚Ì—v‹‚Ìˆ—‚ÉŽg—p‚·‚é‰ž“š‚ÌŠi”[‚ðI—¹‚·‚é‚Æ”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒã€ã‚­ãƒ£ãƒƒã‚·ãƒ³ã‚° ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®æ›´æ–°ã€ãŠã‚ˆã³ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‹ã‚‰ã®å¾Œç¶šã®è¦æ±‚ã®å‡¦ç†ã«ä½¿ç”¨ã™ã‚‹å¿œç­”ã®æ ¼ç´ã‚’çµ‚äº†ã™ã‚‹ã¨ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -259,7 +259,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ASP.NET ‚ª—v‹‚É‰ž“š‚·‚é‚Æ‚«‚ÉAŽÀs‚Ì HTTP ƒpƒCƒvƒ‰ƒCƒ“ ƒ`ƒFƒCƒ“‚ÌÅŒã‚ÌƒCƒxƒ“ƒg‚Æ‚µ‚Ä”­¶‚µ‚Ü‚·B
+		''' ASP.NET ãŒè¦æ±‚ã«å¿œç­”ã™ã‚‹ã¨ãã«ã€å®Ÿè¡Œã® HTTP ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ ãƒã‚§ã‚¤ãƒ³ã®æœ€å¾Œã®ã‚¤ãƒ™ãƒ³ãƒˆã¨ã—ã¦ç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -269,7 +269,7 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' Page ‚Ì Init ƒCƒxƒ“ƒg‚ª”­¶‚µ‚Ü‚·B
+		''' Page ã® Init ã‚¤ãƒ™ãƒ³ãƒˆãŒç™ºç”Ÿã—ã¾ã™ã€‚
 		''' </summary>
 		''' <param name="sender"></param>
 		''' <param name="e"></param>
@@ -288,11 +288,11 @@ Namespace Web
 #End Region
 
 		''' <summary>
-		''' ˆË‘¶«‚Ì’“ü
+		''' ä¾å­˜æ€§ã®æ³¨å…¥
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' HttpHandler ‚ÌˆË‘¶«’“ü
+		''' HttpHandler ã®ä¾å­˜æ€§æ³¨å…¥
 		''' </remarks>
 		Private Sub _inject(ByVal target As IHttpHandler)
 			If target Is Nothing Then
@@ -312,22 +312,22 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' ˆË‘¶«‚Ì’“ü
+		''' ä¾å­˜æ€§ã®æ³¨å…¥
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' Page ‚ÌˆË‘¶«’“ü
+		''' Page ã®ä¾å­˜æ€§æ³¨å…¥
 		''' </remarks>
 		Private Sub _inject(ByVal target As Page)
 			_injector.Inject(target)
 		End Sub
 
 		''' <summary>
-		''' ˆË‘¶«‚Ì’“ü
+		''' ä¾å­˜æ€§ã®æ³¨å…¥
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' MasterPage ‚ÌˆË‘¶«’“ü
+		''' MasterPage ã®ä¾å­˜æ€§æ³¨å…¥
 		''' </remarks>
 		Private Sub _inject(ByVal target As MasterPage)
 			If target Is Nothing Then
@@ -339,11 +339,11 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' DAO ƒCƒ“ƒXƒ^ƒ“ƒX‚ÌŠJ•ú
+		''' DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®é–‹æ”¾
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' HttpHandler ‚Ì DAO ƒCƒ“ƒXƒ^ƒ“ƒXŠJ•ú
+		''' HttpHandler ã® DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹é–‹æ”¾
 		''' </remarks>
 		Private Sub _daoDisposeHttpHandler(ByVal target As IHttpHandler)
 			If target Is Nothing Then
@@ -362,11 +362,11 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' DAO ƒCƒ“ƒXƒ^ƒ“ƒX‚ÌŠJ•ú
+		''' DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®é–‹æ”¾
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' MasterPage ‚Ì DAO ƒCƒ“ƒXƒ^ƒ“ƒXŠJ•ú
+		''' MasterPage ã® DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹é–‹æ”¾
 		''' </remarks>
 		Private Sub _daoDisposeMaster(ByVal target As MasterPage)
 			_injector.DaoDispose(target)
@@ -379,11 +379,11 @@ Namespace Web
 		End Sub
 
 		''' <summary>
-		''' DAO ƒCƒ“ƒXƒ^ƒ“ƒX‚ÌŠJ•ú
+		''' DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®é–‹æ”¾
 		''' </summary>
 		''' <param name="target"></param>
 		''' <remarks>
-		''' Page ‚Ì DAO ƒCƒ“ƒXƒ^ƒ“ƒXŠJ•ú
+		''' Page ã® DAO ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹é–‹æ”¾
 		''' </remarks>
 		Private Sub _daoDisposePage(ByVal target As Page)
 			_injector.DaoDispose(target)

@@ -7,16 +7,16 @@ Imports Moca.Web.Attr
 Namespace Di
 
 	''' <summary>
-	''' �y�[�W�ɑ΂��Ă̈ˑ�������
+	''' ページに対しての依存性注入
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class MocaWebInjector
 		Inherits MocaInjector
 
-#Region " �R���X�g���N�^ "
+#Region " コンストラクタ "
 
 		''' <summary>
-		''' �f�t�H���g�R���X�g���N�^
+		''' デフォルトコンストラクタ
 		''' </summary>
 		''' <remarks></remarks>
 		Public Sub New()
@@ -28,14 +28,14 @@ Namespace Di
 #End Region
 
 		''' <summary>
-		''' �t�B�[���h�փC���X�^���X�̒���
+		''' フィールドへインスタンスの注入
 		''' </summary>
-		''' <param name="target">�ΏۂƂȂ�I�u�W�F�N�g</param>
-		''' <param name="field">�ΏۂƂȂ�t�B�[���h</param>
-		''' <param name="component">�ΏۂƂȂ�R���|�[�l���g</param>
-		''' <returns>���������C���X�^���X</returns>
+		''' <param name="target">対象となるオブジェクト</param>
+		''' <param name="field">対象となるフィールド</param>
+		''' <param name="component">対象となるコンポーネント</param>
+		''' <returns>生成したインスタンス</returns>
 		''' <remarks>
-		''' MocaComponent4Http �Ƃ��Ĉ����������߃I�[�o�[���C�h
+		''' MocaComponent4Http として扱いたいためオーバーライド
 		''' </remarks>
 		Protected Shadows Function fieldInject(ByVal target As Object, ByVal field As System.Reflection.FieldInfo, ByVal component As MocaComponent) As Object
 			Dim instance As Object

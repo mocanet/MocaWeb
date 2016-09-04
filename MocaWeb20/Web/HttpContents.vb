@@ -4,7 +4,7 @@ Imports System.Reflection
 Namespace Web
 
 	''' <summary>
-	''' Http‚ÌƒCƒ“ƒ^ƒZƒvƒ^[‚Åg—p‚·‚éƒRƒ“ƒeƒ“ƒc
+	''' Httpæ™‚ã®ã‚¤ãƒ³ã‚¿ã‚»ãƒ—ã‚¿ãƒ¼ã§ä½¿ç”¨ã™ã‚‹ã‚³ãƒ³ãƒ†ãƒ³ãƒ„
 	''' </summary>
 	''' <remarks></remarks>
 	Public Class HttpContents
@@ -15,10 +15,10 @@ Namespace Web
 
 		Private _queryStringMap As Hashtable
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
 		''' <param name="target">Object</param>
 		''' <remarks></remarks>

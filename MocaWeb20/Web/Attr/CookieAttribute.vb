@@ -8,35 +8,35 @@ Imports Moca.Web.Interceptor
 Namespace Web.Attr
 
 	''' <summary>
-	''' ƒNƒbƒL[‚Ìí•Ê
+	''' ã‚¯ãƒƒã‚­ãƒ¼ã®ç¨®åˆ¥
 	''' </summary>
 	''' <remarks></remarks>
 	Public Enum CookieType
-		''' <summary>Request ‘¤‚ÌƒNƒbƒL[</summary>
+		''' <summary>Request å´ã®ã‚¯ãƒƒã‚­ãƒ¼</summary>
 		Request = 0
-		''' <summary>Response ‘¤‚ÌƒNƒbƒL[</summary>
+		''' <summary>Response å´ã®ã‚¯ãƒƒã‚­ãƒ¼</summary>
 		Response
 	End Enum
 
 	''' <summary>
-	''' ƒNƒbƒL[‘®«
+	''' ã‚¯ãƒƒã‚­ãƒ¼å±æ€§
 	''' </summary>
 	''' <remarks>
-	''' ƒNƒbƒL[‚Æ‚µ‚Äˆµ‚¢‚½‚¢ƒtƒB[ƒ‹ƒh‚É‘Î‚µ‚Äw’è‚µ‚Ü‚·B
+	''' ã‚¯ãƒƒã‚­ãƒ¼ã¨ã—ã¦æ‰±ã„ãŸã„ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã«å¯¾ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚
 	''' </remarks>
 	<AttributeUsage(AttributeTargets.Field)> _
 	Public Class CookieAttribute
 		Inherits Attribute
 
-		''' <summary>ƒNƒbƒL[–¼</summary>
+		''' <summary>ã‚¯ãƒƒã‚­ãƒ¼å</summary>
 		Private _cookieType As CookieType
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="dataType">ƒNƒbƒL[–¼</param>
+		''' <param name="dataType">ã‚¯ãƒƒã‚­ãƒ¼å</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal dataType As CookieType)
 			_cookieType = dataType
@@ -44,10 +44,10 @@ Namespace Web.Attr
 
 #End Region
 
-#Region " ƒvƒƒpƒeƒB "
+#Region " ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ "
 
 		''' <summary>
-		''' ƒNƒbƒL[–¼ƒvƒƒpƒeƒB
+		''' ã‚¯ãƒƒã‚­ãƒ¼åãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
 		''' </summary>
 		''' <value></value>
 		''' <returns></returns>
@@ -61,10 +61,10 @@ Namespace Web.Attr
 #End Region
 
 		''' <summary>
-		''' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
+		''' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
 		''' </summary>
-		''' <param name="target">‘ÎÛ‚Æ‚È‚éƒIƒuƒWƒFƒNƒg</param>
-		''' <param name="field">‘ÎÛ‚Æ‚È‚éƒtƒB[ƒ‹ƒh</param>
+		''' <param name="target">å¯¾è±¡ã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
+		''' <param name="field">å¯¾è±¡ã¨ãªã‚‹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰</param>
 		''' <returns></returns>
 		''' <remarks></remarks>
         Public Function CreateComponent(Of T)(ByVal target As Object, ByVal field As FieldInfo) As MocaComponent
@@ -73,7 +73,7 @@ Namespace Web.Attr
 
             aspects = New ArrayList()
 
-            ' ƒtƒB[ƒ‹ƒh‚ÌƒCƒ“ƒ^ƒtƒF[ƒX‚ğ‰ğÍ
+            ' ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’è§£æ
             props = ClassUtil.GetProperties(field.FieldType)
             For Each prop As PropertyInfo In props
                 Dim name As String
@@ -85,14 +85,14 @@ Namespace Web.Attr
                     name = attr.Name
                 End If
 
-                ' Getter ƒƒ\ƒbƒh‚ÌƒAƒXƒyƒNƒgì¬
+                ' Getter ãƒ¡ã‚½ãƒƒãƒ‰ã®ã‚¢ã‚¹ãƒšã‚¯ãƒˆä½œæˆ
                 Dim pointcut As IPointcut
                 pointcut = New Pointcut(New String() {prop.GetGetMethod().ToString})
                 aspects.Add(New Aspect(New CookieInterceptor(DataType, name), pointcut))
             Next
 
-            ' ƒRƒ“ƒ|[ƒlƒ“ƒgì¬
-            ' ƒL[‚ÅƒRƒ“ƒ|[ƒlƒ“ƒg‚ÍŠi”[‚·‚éBƒtƒB[ƒ‹ƒh‚ÌŒ^–¼Dƒf[ƒ^ƒ^ƒCƒv’l
+            ' ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆ
+            ' ã‚­ãƒ¼ã§ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã¯æ ¼ç´ã™ã‚‹ã€‚ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®å‹åï¼ãƒ‡ãƒ¼ã‚¿ã‚¿ã‚¤ãƒ—å€¤
             Dim component As MocaComponent
             component = CType(Moca.Util.ClassUtil.NewInstance(GetType(T), New Object() {field.FieldType.FullName & "." & DataType, field.FieldType}), MocaComponent)
             component.Aspects = DirectCast(aspects.ToArray(GetType(IAspect)), IAspect())

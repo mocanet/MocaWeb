@@ -4,28 +4,28 @@ Imports Moca.Aop
 Namespace Web.Interceptor
 
 	''' <summary>
-	''' ƒNƒGƒŠ[•¶š—ñ•Ï”‚ğˆµ‚¤‚Æ‚«‚Ég—p‚·‚é Setter ƒƒ\ƒbƒhƒCƒ“ƒ^[ƒZƒvƒ^[
+	''' ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å¤‰æ•°ã‚’æ‰±ã†ã¨ãã«ä½¿ç”¨ã™ã‚‹ Setter ãƒ¡ã‚½ãƒƒãƒ‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ã‚¿ãƒ¼
 	''' </summary>
 	''' <remarks>
-	''' ƒŠƒNƒGƒXƒg‚ÌƒNƒGƒŠ[‚ğ•ÏX‚·‚é‚±‚Æ‚Í–³‚¢‚Ì‚ÅASetter ƒƒ\ƒbƒh‚Í•K—v‚Å‚Í‚È‚¢‚ªA
-	''' ƒŠƒ_ƒCƒŒƒNƒg‚·‚é‚Æ‚«‚È‚Ç‚ÉƒNƒGƒŠ[•¶š—ñ‚ğì¬‚·‚éê‡‚È‚Ç‚Ég—p‚·‚éB
+	''' ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®ã‚¯ã‚¨ãƒªãƒ¼ã‚’å¤‰æ›´ã™ã‚‹ã“ã¨ã¯ç„¡ã„ã®ã§ã€Setter ãƒ¡ã‚½ãƒƒãƒ‰ã¯å¿…è¦ã§ã¯ãªã„ãŒã€
+	''' ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆã™ã‚‹ã¨ããªã©ã«ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—ã‚’ä½œæˆã™ã‚‹å ´åˆãªã©ã«ä½¿ç”¨ã™ã‚‹ã€‚
 	''' </remarks>
 	Public Class QueryStringSetInterceptor
 		Inherits AbstractHttpInterceptor
 		Implements IMethodInterceptor
 
-		''' <summary>ƒNƒGƒŠ[•¶š—ñ–¼</summary>
+		''' <summary>ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å</summary>
 		Private _name As String
 
 		''' <summary>log4net logger</summary>
 		Private ReadOnly _mylog As log4net.ILog = log4net.LogManager.GetLogger(String.Empty)
 
-#Region " ƒRƒ“ƒXƒgƒ‰ƒNƒ^ "
+#Region " ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ "
 
 		''' <summary>
-		''' ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		''' ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		''' </summary>
-		''' <param name="name">ƒNƒGƒŠ[•¶š—ñ–¼</param>
+		''' <param name="name">ã‚¯ã‚¨ãƒªãƒ¼æ–‡å­—åˆ—å</param>
 		''' <remarks></remarks>
 		Public Sub New(ByVal name As String)
 			_name = name
@@ -34,12 +34,12 @@ Namespace Web.Interceptor
 #End Region
 
 		''' <summary>
-		''' ƒƒ\ƒbƒhÀs
+		''' ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œ
 		''' </summary>
-		''' <param name="invocation">Interceptor‚©‚çƒCƒ“ƒ^[ƒZƒvƒg‚³‚ê‚Ä‚¢‚éƒƒ\ƒbƒh‚Ìî•ñ</param>
-		''' <returns>ŠY“–‚·‚éƒAƒvƒŠƒP[ƒVƒ‡ƒ“ƒIƒuƒWƒFƒNƒg</returns>
+		''' <param name="invocation">Interceptorã‹ã‚‰ã‚¤ãƒ³ã‚¿ãƒ¼ã‚»ãƒ—ãƒˆã•ã‚Œã¦ã„ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã®æƒ…å ±</param>
+		''' <returns>è©²å½“ã™ã‚‹ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</returns>
 		''' <remarks>
-		''' ƒAƒvƒŠƒP[ƒVƒ‡ƒ“–¼‚ğŒ³‚ÉƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚©‚çƒIƒuƒWƒFƒNƒg‚ğİ’è‚·‚éB
+		''' ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³åã‚’å…ƒã«ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‹ã‚‰ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¨­å®šã™ã‚‹ã€‚
 		''' </remarks>
 		Public Function Invoke(ByVal invocation As Aop.IMethodInvocation) As Object Implements Aop.IMethodInterceptor.Invoke
 			Dim contents As IHttpContents
@@ -51,7 +51,7 @@ Namespace Web.Interceptor
 
 			_mylog.DebugFormat("(Aspect:{0}) QueryString Setter.{1}={2}", methodName, _name, CStr(invocation.Args(0)))
 
-			' Nothing ‚ğİ’è‚·‚é‚Æ‚«‚ÍAíœ‚·‚é
+			' Nothing ã‚’è¨­å®šã™ã‚‹ã¨ãã¯ã€å‰Šé™¤ã™ã‚‹
 			If invocation.Args(0) Is Nothing Then
 				contents.QueryStringMap.Remove(_name)
 			Else
