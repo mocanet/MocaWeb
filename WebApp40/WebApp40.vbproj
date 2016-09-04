@@ -169,11 +169,6 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Readme\Elmah.sqldb.readme.txt" />
-    <None Include="App_Readme\Scripts\Stored Procedures\ELMAH_GetErrorsXml.sql" />
-    <None Include="App_Readme\Scripts\Stored Procedures\ELMAH_GetErrorXml.sql" />
-    <None Include="App_Readme\Scripts\Stored Procedures\ELMAH_LogError.sql" />
-    <None Include="App_Readme\Scripts\Tables\ELMAH_Error.sql" />
     <Content Include="WebForm1.aspx" />
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
@@ -232,7 +227,6 @@
       <DependentUpon>log4net.config</DependentUpon>
     </None>
     <None Include="log4net.config" />
-    <None Include="My Project\AjaxMin.targets" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -263,13 +257,13 @@
     <Folder Include="Views\Shared\Master\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MocaWeb40\MocaWeb40.vbproj">
       <Project>{280ceec4-c7b2-45ca-bb0f-657387fe94c2}</Project>
       <Name>MocaWeb40</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -316,12 +310,9 @@
     <Error Condition="!Exists('..\packages\MiYABiS.WebConfigTransform.1.0.2\build\MiYABiS.WebConfigTransform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MiYABiS.WebConfigTransform.1.0.2\build\MiYABiS.WebConfigTransform.targets'))" />
     <Error Condition="!Exists('..\packages\MSBuild.Extension.Pack.1.8.0\build\net40\MSBuild.Extension.Pack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.Extension.Pack.1.8.0\build\net40\MSBuild.Extension.Pack.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-    <Error Condition="!Exists('..\packages\Moca.NETWebFormsProject.3.1.1\build\Moca.NETWebFormsProject.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Moca.NETWebFormsProject.3.1.1\build\Moca.NETWebFormsProject.targets'))" />
   </Target>
   <Import Project="..\packages\MSBuild.Extension.Pack.1.8.0\build\net40\MSBuild.Extension.Pack.targets" Condition="Exists('..\packages\MSBuild.Extension.Pack.1.8.0\build\net40\MSBuild.Extension.Pack.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\packages\Moca.NETWebFormsProject.3.1.1\build\Moca.NETWebFormsProject.targets" Condition="Exists('..\packages\Moca.NETWebFormsProject.3.1.1\build\Moca.NETWebFormsProject.targets')" />
-  <Import Project="My Project\AjaxMin.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
