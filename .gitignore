@@ -195,3 +195,19 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 *.bak
+/NuGetPackager/lib/net20/MocaWeb.xml
+/NuGetPackager/lib/net20/MocaWeb.dll
+/NuGetPackager/lib/net35/MocaWeb.xml
+/NuGetPackager/lib/net35/MocaWeb.dll
+/NuGetPackager/lib/net40/MocaWeb.xml
+/NuGetPackager/lib/net40/MocaWeb.dll
+/NuGetPackager/lib/net45/MocaWeb.xml
+/NuGetPackager/lib/net45/MocaWeb.dll
+/NuGetPackager/lib/net452/MocaWeb.xml
+/NuGetPackager/lib/net452/MocaWeb.dll
+/NuGetPackager/lib/net46/MocaWeb.xml
+/NuGetPackager/lib/net46/MocaWeb.dll
+/NuGetPackager/lib/net462/MocaWeb.xml
+/NuGetPackager/lib/net462/MocaWeb.dll
+/NuGetPackager/lib/net47/MocaWeb.xml
+/NuGetPackager/lib/net47/MocaWeb.dll
