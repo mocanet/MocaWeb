@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MocaWeb\MocaWeb20.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb35.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb40.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb45.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb452.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb46.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb462.vbproj" />
+    <ProjectReference Include="..\MocaWeb\MocaWeb47.vbproj" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>87784b51-36b5-4a22-80e4-6cc83e275ed7</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Id>Moca.NETWebApp</Id>
+    <Version>2.1.0-beta02</Version>
+    <Title>Moca.NET WebApplication</Title>
+    <Authors>MiYABiS</Authors>
+    <Owners>MiYABiS</Owners>
+    <Summary>DI with AOP framework Moca.NET Web Application</Summary>
+    <Description>DI with AOP framework Moca.NET Web Application</Description>
+    <ReleaseNotes>GitHub issues : </ReleaseNotes>
+    <ProjectUrl>https://github.com/mocanet/MocaWeb</ProjectUrl>
+    <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
+    <Copyright>Copyright © 2011 MiYABiS All Rights Reserved.</Copyright>
+    <Tags>Moca</Tags>
+    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=64</IconUrl>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+    <GenerateSymbolPackage>true</GenerateSymbolPackage>
+    <!--
+    <Description>DI&amp;AOP framework Moca.NET Web Application</Description>
+    <ReleaseNotes>GitHub issues : </ReleaseNotes>
+    <ProjectUrl>https://github.com/mocanet/MocaWeb</ProjectUrl>
+    <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
+    <Copyright>Copyright © 2011 MiYABiS All Rights Reserved.</Copyright>
+    <Tags>Moca</Tags>
+    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=64</IconUrl>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+    <GenerateSymbolPackage>true</GenerateSymbolPackage>
+    -->
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>

@@ -103,10 +103,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Moca, Version=4.0.6.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETCore.2.3.3\lib\net40-full\Moca.dll</HintPath>
+      <HintPath>..\packages\Moca.NETCore.2.3.5\lib\net40\Moca.dll</HintPath>
     </Reference>
     <Reference Include="MocaConfiguration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0e6be2f542e46d17, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETConfiguration.1.0.3\lib\net40\MocaConfiguration.dll</HintPath>
+      <HintPath>..\packages\Moca.NETConfiguration.1.1.0\lib\net40\MocaConfiguration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -257,7 +257,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MocaWeb40\MocaWeb40.vbproj">
+    <ProjectReference Include="..\MocaWeb\MocaWeb40.vbproj">
       <Project>{280ceec4-c7b2-45ca-bb0f-657387fe94c2}</Project>
       <Name>MocaWeb40</Name>
     </ProjectReference>
