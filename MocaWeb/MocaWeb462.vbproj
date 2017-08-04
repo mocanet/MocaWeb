@@ -64,9 +64,11 @@
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Moca, Version=4.6.4.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETCore.2.3.5\lib\net462\Moca.dll</HintPath>
+    <Reference Include="Moca, Version=5.0.0.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moca.NETCore.3.0.0-beta01\lib\net462\Moca.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -218,11 +220,11 @@
       <ErrorText>このプロジェクトは、このコンピューターにはない NuGet パッケージを参照しています。これらをダウンロードするには、NuGet パッケージの復元を有効にしてください。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。不足しているファイルは {0} です。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\NuProj.Common.0.11.30\build\dotnet\NuProj.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuProj.Common.0.11.30\build\dotnet\NuProj.Common.targets'))" />
   </Target>
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets" Condition="Exists('..\packages\NuProj.Common.0.11.28-beta\build\dotnet\NuProj.Common.targets')" />
+  <Import Project="..\packages\NuProj.Common.0.11.30\build\dotnet\NuProj.Common.targets" Condition="Exists('..\packages\NuProj.Common.0.11.30\build\dotnet\NuProj.Common.targets')" />
 </Project>

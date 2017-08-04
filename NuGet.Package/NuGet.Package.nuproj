@@ -25,7 +25,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Id>Moca.NETWebApp</Id>
-    <Version>2.1.0-beta02</Version>
+    <Version>3.0.0-beta01</Version>
     <Title>Moca.NET WebApplication</Title>
     <Authors>MiYABiS</Authors>
     <Owners>MiYABiS</Owners>
@@ -35,24 +35,13 @@
     <ProjectUrl>https://github.com/mocanet/MocaWeb</ProjectUrl>
     <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
     <Copyright>Copyright © 2011 MiYABiS All Rights Reserved.</Copyright>
-    <Tags>Moca</Tags>
-    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=64</IconUrl>
+    <Tags>Moca.NET</Tags>
+    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=256</IconUrl>
     <EmbedSourceFiles>true</EmbedSourceFiles>
     <GenerateSymbolPackage>true</GenerateSymbolPackage>
-    <!--
-    <Description>DI&amp;AOP framework Moca.NET Web Application</Description>
-    <ReleaseNotes>GitHub issues : </ReleaseNotes>
-    <ProjectUrl>https://github.com/mocanet/MocaWeb</ProjectUrl>
-    <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
-    <Copyright>Copyright © 2011 MiYABiS All Rights Reserved.</Copyright>
-    <Tags>Moca</Tags>
-    <IconUrl>https://avatars3.githubusercontent.com/u/14543303?s=64</IconUrl>
-    <EmbedSourceFiles>true</EmbedSourceFiles>
-    <GenerateSymbolPackage>true</GenerateSymbolPackage>
-    -->
   </PropertyGroup>
   <PropertyGroup>
-    <NuProjPath>..\packages\NuProj.0.11.28-beta\tools\</NuProjPath>
+    <NuProjPath>..\packages\NuProj.0.11.30\tools\</NuProjPath>
   </PropertyGroup>
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <Import Project="$(NuProjPath)\NuProj.targets" />

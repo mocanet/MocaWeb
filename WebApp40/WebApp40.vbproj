@@ -102,11 +102,13 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Moca, Version=4.0.6.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETCore.2.3.5\lib\net40\Moca.dll</HintPath>
+    <Reference Include="Moca, Version=5.0.0.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moca.NETCore.3.0.0-beta01\lib\net40\Moca.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MocaConfiguration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0e6be2f542e46d17, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETConfiguration.1.1.0\lib\net40\MocaConfiguration.dll</HintPath>
+    <Reference Include="MocaConfiguration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=0e6be2f542e46d17, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moca.NETConfiguration.2.0.0-beta01\lib\net40\MocaConfiguration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
